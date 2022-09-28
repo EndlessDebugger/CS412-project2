@@ -40,7 +40,9 @@ class RequestQueue{
 
     Request pop(){
         if(!empty()){
-            return holder.pop();
+            Request temp = holder.front();
+            holder.pop();
+            return temp;
         }
         
         throw "Queue is empty";

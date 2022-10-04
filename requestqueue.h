@@ -12,14 +12,14 @@ struct Request{
     string ip_out;
     int time;
 
-    Request(): ip_in(gen_ip()), ip_out(gen_ip()),time(gen_time()){};
+    Request(int limit): ip_in(gen_ip()), ip_out(gen_ip()),time(limit){};
     Request(string in, string out, int t): ip_in(in), ip_out(out),time(t){};
 
     string gen_ip(){
         return to_string(rand()%256)+"."+to_string(rand()%256)+"."+to_string(rand()%256)+"."+to_string(rand()%256);
     };
 
-    int gen_time(){ return rand(); };
+    // int gen_time(int limit){ return rand()% limit+1; };
 };
 
 

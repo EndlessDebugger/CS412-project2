@@ -5,6 +5,8 @@
 
 using std::string, std::queue, std::rand, std::to_string;
 
+
+// TODO: Move to its own file
 struct Request{
     string ip_in;
     string ip_out;

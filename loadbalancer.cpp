@@ -20,8 +20,6 @@ loadbalancer::loadbalancer(int time_len, int serv_count){
     clock_len = time_len;
     num_servers = serv_count;
 
-    // servers = new webserver[num_servers];
-
     char name = 'a';
     for(int i=0; i<num_servers;i++){
         servers.push_back(webserver(name));
@@ -49,9 +47,6 @@ void loadbalancer::main_loop(){
         }
 
         for(int i = 0; i <num_servers;i++){
-
-            //     if(!i.status(clock)){
-            // cout<<i.get_name()<<" "<< clock<<" "<< !i.status(clock)<<endl;
             try{
                 if(!servers[i].status(clock)){
                     servers[i].set_job(clock, workload.pop());
@@ -59,7 +54,6 @@ void loadbalancer::main_loop(){
                 }
             }
             catch(...){
-            // cout<<i.get_name()<<" "<< clock<<" "<< !i.status(clock)<<endl;
                 continue;
             }
         }

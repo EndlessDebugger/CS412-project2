@@ -20,8 +20,6 @@ class webserver{
     }
 
     bool status(int curr_time){
-
-        // cout<<" |"<<"Status"<<": "<<(current.time + start_time == curr_time)<<"| ";
         if(current.time == 0){
             occupied = false;
         }
@@ -36,12 +34,9 @@ class webserver{
         start_time = beg_time;
         current = incoming;
         occupied = true;
-        // cout<<current.time<<endl;
     }
 
     void end_job(int curr_time){
-        // cout<<name<<endl;
-
         cout<<"At " << curr_time << " Server "<<string(1,name) << " processed request from "<< current.ip_in << " to " << current.ip_out << endl;
         start_time = 0;
         occupied = false;

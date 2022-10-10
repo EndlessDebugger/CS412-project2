@@ -1,7 +1,6 @@
 #include <queue>
 #include <string>
 #include <exception>
-#include <stdlib.h>
 
 using std::string, std::queue, std::rand, std::to_string;
 
@@ -12,6 +11,7 @@ struct Request{
     string ip_out;
     int time;
 
+    Request(): ip_in("default"), ip_out("default"),time(0){};
     Request(int limit): ip_in(gen_ip()), ip_out(gen_ip()),time(limit){};
     Request(string in, string out, int t): ip_in(in), ip_out(out),time(t){};
 

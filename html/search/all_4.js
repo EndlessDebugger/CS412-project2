@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['request_5',['Request',['../structRequest.html',1,'Request'],['../structRequest.html#afaf8d8928de7ffff8a3767589489bd33',1,'Request::Request()'],['../structRequest.html#aea667dc9851539bb6b3d5a5a3b48e831',1,'Request::Request(int limit)'],['../structRequest.html#a32c3715ab77da2fe099712affff193ef',1,'Request::Request(string in, string out, int t)']]],
-  ['requestqueue_6',['RequestQueue',['../classRequestQueue.html',1,'']]],
-  ['requestqueue_2eh_7',['requestqueue.h',['../requestqueue_8h.html',1,'']]]
+  ['ip_5fin_4',['ip_in',['../structRequest.html#a2b93ebbd0fbd5ebf8b15f5583b087a12',1,'Request']]],
+  ['ip_5fout_5',['ip_out',['../structRequest.html#ae3394ea2aa8654ec22bc87083a8d3bda',1,'Request']]]
 ];

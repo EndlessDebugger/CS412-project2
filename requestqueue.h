@@ -57,13 +57,20 @@ struct Request{
 
 };
 
-
+/*! \class RequestQueue
+    \brief A class using the standard library queue data structure to hold requests for the webserver to pull from.
+*/
 class RequestQueue{
     private:
-    queue<Request> holder;
+    queue<Request> holder;/**< Queue to hold requests for the loadbalancer to insert requests into web-servers.*/
 
     public:
 
+    //! Add new requests to the queue
+    /*!
+        \param x a Request argument for the queue to hold on until the next available server
+        \return a bool parameter for debugging and verifcation of successful push
+    */
     bool add(Request x){
         try{
             holder.push(x);
@@ -74,7 +81,11 @@ class RequestQueue{
         
         return true;
     }
-
+    //! Remove and return a request from the queue
+    /*!
+        Checks if queue is empty, then stores the top request into a temporay variable and removes its from the queue. Throws error if queue is empty.
+        \return a Request parameter that represents the topmost request
+    */
     Request pop(){
         if(!empty()){
             Request temp = holder.front();
@@ -85,6 +96,11 @@ class RequestQueue{
         throw "Queue is empty";
     }
 
+    //!Checks if the queue is empty
+    /*!
+        Accomplished via the built-in empty variable
+        \return a bool parameter, true if the queue is empty. False otherwise.
+    */
     bool empty(){
         return holder.empty();
     }

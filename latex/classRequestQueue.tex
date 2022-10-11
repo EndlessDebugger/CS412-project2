@@ -1,17 +1,73 @@
 \hypertarget{classRequestQueue}{}\doxysection{Request\+Queue Class Reference}
 \label{classRequestQueue}\index{RequestQueue@{RequestQueue}}
+
+
+A class using the standard library queue data structure to hold requests for the webserver to pull from.  
+
+
+
+
+{\ttfamily \#include $<$requestqueue.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+bool \mbox{\hyperlink{classRequestQueue_a4671286e348db4236ad62dba374b80d8}{add}} (\mbox{\hyperlink{structRequest}{Request}} x)
+\begin{DoxyCompactList}\small\item\em Add new requests to the queue. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structRequest}{Request}} \mbox{\hyperlink{classRequestQueue_a46f0a411a4ae00af3712e306ea2348c6}{pop}} ()
+\begin{DoxyCompactList}\small\item\em Remove and return a request from the queue. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classRequestQueue_aaba0cd9ffc42a84ed759ffde763792d1}{empty}} ()
+\begin{DoxyCompactList}\small\item\em Checks if the queue is empty. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class using the standard library queue data structure to hold requests for the webserver to pull from. 
+
+\doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{classRequestQueue_a4671286e348db4236ad62dba374b80d8}\label{classRequestQueue_a4671286e348db4236ad62dba374b80d8}} 
-bool {\bfseries add} (\mbox{\hyperlink{structRequest}{Request}} x)
-\item 
-\mbox{\Hypertarget{classRequestQueue_a46f0a411a4ae00af3712e306ea2348c6}\label{classRequestQueue_a46f0a411a4ae00af3712e306ea2348c6}} 
-\mbox{\hyperlink{structRequest}{Request}} {\bfseries pop} ()
-\item 
+\index{RequestQueue@{RequestQueue}!add@{add}}
+\index{add@{add}!RequestQueue@{RequestQueue}}
+\doxysubsubsection{\texorpdfstring{add()}{add()}}
+{\footnotesize\ttfamily bool Request\+Queue\+::add (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structRequest}{Request}}}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Add new requests to the queue. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & a \mbox{\hyperlink{structRequest}{Request}} argument for the queue to hold on until the next available server \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a bool parameter for debugging and verifcation of successful push 
+\end{DoxyReturn}
 \mbox{\Hypertarget{classRequestQueue_aaba0cd9ffc42a84ed759ffde763792d1}\label{classRequestQueue_aaba0cd9ffc42a84ed759ffde763792d1}} 
-bool {\bfseries empty} ()
-\end{DoxyCompactItemize}
+\index{RequestQueue@{RequestQueue}!empty@{empty}}
+\index{empty@{empty}!RequestQueue@{RequestQueue}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily bool Request\+Queue\+::empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if the queue is empty. 
+
+Accomplished via the built-\/in empty variable \begin{DoxyReturn}{Returns}
+a bool parameter, true if the queue is empty. False otherwise. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classRequestQueue_a46f0a411a4ae00af3712e306ea2348c6}\label{classRequestQueue_a46f0a411a4ae00af3712e306ea2348c6}} 
+\index{RequestQueue@{RequestQueue}!pop@{pop}}
+\index{pop@{pop}!RequestQueue@{RequestQueue}}
+\doxysubsubsection{\texorpdfstring{pop()}{pop()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structRequest}{Request}} Request\+Queue\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Remove and return a request from the queue. 
+
+Checks if queue is empty, then stores the top request into a temporay variable and removes its from the queue. Throws error if queue is empty. \begin{DoxyReturn}{Returns}
+a \mbox{\hyperlink{structRequest}{Request}} parameter that represents the topmost request 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

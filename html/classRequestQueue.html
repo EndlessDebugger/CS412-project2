@@ -68,19 +68,118 @@ $(function() {
 <div class="title">RequestQueue Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class using the standard library queue data structure to hold requests for the webserver to pull from.  
+ <a href="classRequestQueue.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="requestqueue_8h_source.html">requestqueue.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4671286e348db4236ad62dba374b80d8"><td class="memItemLeft" align="right" valign="top"><a id="a4671286e348db4236ad62dba374b80d8"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>add</b> (<a class="el" href="structRequest.html">Request</a> x)</td></tr>
+<tr class="memitem:a4671286e348db4236ad62dba374b80d8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRequestQueue.html#a4671286e348db4236ad62dba374b80d8">add</a> (<a class="el" href="structRequest.html">Request</a> x)</td></tr>
+<tr class="memdesc:a4671286e348db4236ad62dba374b80d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add new requests to the queue.  <a href="classRequestQueue.html#a4671286e348db4236ad62dba374b80d8">More...</a><br /></td></tr>
 <tr class="separator:a4671286e348db4236ad62dba374b80d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46f0a411a4ae00af3712e306ea2348c6"><td class="memItemLeft" align="right" valign="top"><a id="a46f0a411a4ae00af3712e306ea2348c6"></a>
-<a class="el" href="structRequest.html">Request</a>&#160;</td><td class="memItemRight" valign="bottom"><b>pop</b> ()</td></tr>
+<tr class="memitem:a46f0a411a4ae00af3712e306ea2348c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structRequest.html">Request</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRequestQueue.html#a46f0a411a4ae00af3712e306ea2348c6">pop</a> ()</td></tr>
+<tr class="memdesc:a46f0a411a4ae00af3712e306ea2348c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove and return a request from the queue.  <a href="classRequestQueue.html#a46f0a411a4ae00af3712e306ea2348c6">More...</a><br /></td></tr>
 <tr class="separator:a46f0a411a4ae00af3712e306ea2348c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaba0cd9ffc42a84ed759ffde763792d1"><td class="memItemLeft" align="right" valign="top"><a id="aaba0cd9ffc42a84ed759ffde763792d1"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>empty</b> ()</td></tr>
+<tr class="memitem:aaba0cd9ffc42a84ed759ffde763792d1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRequestQueue.html#aaba0cd9ffc42a84ed759ffde763792d1">empty</a> ()</td></tr>
+<tr class="memdesc:aaba0cd9ffc42a84ed759ffde763792d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the queue is empty.  <a href="classRequestQueue.html#aaba0cd9ffc42a84ed759ffde763792d1">More...</a><br /></td></tr>
 <tr class="separator:aaba0cd9ffc42a84ed759ffde763792d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class using the standard library queue data structure to hold requests for the webserver to pull from. </p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4671286e348db4236ad62dba374b80d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4671286e348db4236ad62dba374b80d8">&#9670;&nbsp;</a></span>add()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RequestQueue::add </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structRequest.html">Request</a>&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add new requests to the queue. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>a <a class="el" href="structRequest.html" title="A struct holding the incoming and outgoing ip adresses, the time length of a simulated request.">Request</a> argument for the queue to hold on until the next available server </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a bool parameter for debugging and verifcation of successful push </dd></dl>
+
+</div>
+</div>
+<a id="aaba0cd9ffc42a84ed759ffde763792d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaba0cd9ffc42a84ed759ffde763792d1">&#9670;&nbsp;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool RequestQueue::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks if the queue is empty. </p>
+<p>Accomplished via the built-in empty variable </p><dl class="section return"><dt>Returns</dt><dd>a bool parameter, true if the queue is empty. False otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a46f0a411a4ae00af3712e306ea2348c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46f0a411a4ae00af3712e306ea2348c6">&#9670;&nbsp;</a></span>pop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structRequest.html">Request</a> RequestQueue::pop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove and return a request from the queue. </p>
+<p>Checks if queue is empty, then stores the top request into a temporay variable and removes its from the queue. Throws error if queue is empty. </p><dl class="section return"><dt>Returns</dt><dd>a <a class="el" href="structRequest.html" title="A struct holding the incoming and outgoing ip adresses, the time length of a simulated request.">Request</a> parameter that represents the topmost request </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="requestqueue_8h_source.html">requestqueue.h</a></li>
 </ul>

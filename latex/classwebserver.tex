@@ -1,23 +1,99 @@
-\hypertarget{classwebserver}{}\doxysection{webserver Class Reference}
-\label{classwebserver}\index{webserver@{webserver}}
+\hypertarget{classWebServer}{}\doxysection{Web\+Server Class Reference}
+\label{classWebServer}\index{WebServer@{WebServer}}
+
+
+A class object used to represent a server handling tasks and annoucing when they\textquotesingle{}re complete.  
+
+
+
+
+{\ttfamily \#include $<$webserver.\+h$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classwebserver_aa2e5418d6a111ef35bf2e8e47ecfc2ee}\label{classwebserver_aa2e5418d6a111ef35bf2e8e47ecfc2ee}} 
-{\bfseries webserver} (char kname)
-\item 
-\mbox{\Hypertarget{classwebserver_af05764f35cc6ed4b391d2fc03cf65122}\label{classwebserver_af05764f35cc6ed4b391d2fc03cf65122}} 
-bool {\bfseries status} (int curr\+\_\+time)
-\item 
-\mbox{\Hypertarget{classwebserver_adca48f157356fc0605f25d034dc63019}\label{classwebserver_adca48f157356fc0605f25d034dc63019}} 
-void {\bfseries set\+\_\+job} (int beg\+\_\+time, \mbox{\hyperlink{structRequest}{Request}} incoming)
-\item 
-\mbox{\Hypertarget{classwebserver_aa1261e5487e72a6a97d6f3ca5600177a}\label{classwebserver_aa1261e5487e72a6a97d6f3ca5600177a}} 
-void {\bfseries end\+\_\+job} (int curr\+\_\+time)
-\item 
-\mbox{\Hypertarget{classwebserver_a0e812ca6ff0422edb7dcf29c571e9f46}\label{classwebserver_a0e812ca6ff0422edb7dcf29c571e9f46}} 
-char {\bfseries get\+\_\+name} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classWebServer_a8bec1dcfde63262493c6b96bc551ac46}{Web\+Server}} (char kname)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classWebServer_a2217d3f502f9bc003342c7c51e5383f7}{status}} (int curr\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Indicates if the server is available to take on a new request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebServer_a1f688babb28b5e6af7170852351ceaf7}{set\+\_\+job}} (int beg\+\_\+time, \mbox{\hyperlink{structRequest}{Request}} incoming)
+\begin{DoxyCompactList}\small\item\em Sets the server occupied with a new request. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classWebServer_a7c40df83b705ff4e6fcfe9b5341c6d0a}{end\+\_\+job}} (int curr\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Removes current request and announces the end of processing. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class object used to represent a server handling tasks and annoucing when they\textquotesingle{}re complete. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classWebServer_a8bec1dcfde63262493c6b96bc551ac46}\label{classWebServer_a8bec1dcfde63262493c6b96bc551ac46}} 
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\index{WebServer@{WebServer}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{WebServer()}{WebServer()}}
+{\footnotesize\ttfamily Web\+Server\+::\+Web\+Server (\begin{DoxyParamCaption}\item[{char}]{kname }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor. 
+
+This constructor initliazes all the \mbox{\hyperlink{classWebServer}{Web\+Server}} data members and fills the current variable with the default constuctor \mbox{\hyperlink{structRequest}{Request()}}. 
+\begin{DoxyParams}{Parameters}
+{\em kname} & a char representing the unique identifer for the server \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classWebServer_a7c40df83b705ff4e6fcfe9b5341c6d0a}\label{classWebServer_a7c40df83b705ff4e6fcfe9b5341c6d0a}} 
+\index{WebServer@{WebServer}!end\_job@{end\_job}}
+\index{end\_job@{end\_job}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{end\_job()}{end\_job()}}
+{\footnotesize\ttfamily void Web\+Server\+::end\+\_\+job (\begin{DoxyParamCaption}\item[{int}]{curr\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Removes current request and announces the end of processing. 
+
+This function updates the server data-\/members with the default values to put it into a unoccupied state and prints out the completion of the request to the system output with its information. 
+\begin{DoxyParams}{Parameters}
+{\em curr\+\_\+time} & a integer variable representing the current clock cycle on the load balancer. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebServer_a1f688babb28b5e6af7170852351ceaf7}\label{classWebServer_a1f688babb28b5e6af7170852351ceaf7}} 
+\index{WebServer@{WebServer}!set\_job@{set\_job}}
+\index{set\_job@{set\_job}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{set\_job()}{set\_job()}}
+{\footnotesize\ttfamily void Web\+Server\+::set\+\_\+job (\begin{DoxyParamCaption}\item[{int}]{beg\+\_\+time,  }\item[{\mbox{\hyperlink{structRequest}{Request}}}]{incoming }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Sets the server occupied with a new request. 
+
+This function updates the server with a new request by updating the local data members with the new information. 
+\begin{DoxyParams}{Parameters}
+{\em beg\+\_\+time} & a integer variable representing the current clock cycle on the load balancer, doesn\textquotesingle{}t change during request run and used for time arithmetic. \\
+\hline
+{\em incoming} & a \mbox{\hyperlink{structRequest}{Request}} variable representing the incoming request that will occupy the server. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classWebServer_a2217d3f502f9bc003342c7c51e5383f7}\label{classWebServer_a2217d3f502f9bc003342c7c51e5383f7}} 
+\index{WebServer@{WebServer}!status@{status}}
+\index{status@{status}!WebServer@{WebServer}}
+\doxysubsubsection{\texorpdfstring{status()}{status()}}
+{\footnotesize\ttfamily bool Web\+Server\+::status (\begin{DoxyParamCaption}\item[{int}]{curr\+\_\+time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Indicates if the server is available to take on a new request. 
+
+This function checks two conditions to make the determine if the server is unoccupied, otherwise assume it\textquotesingle{}s still processing a \mbox{\hyperlink{structRequest}{Request}}. occupied is set True via \mbox{\hyperlink{classWebServer_a1f688babb28b5e6af7170852351ceaf7}{set\+\_\+job()}}. First condition is if the current request has a time length of 0, this would only be possible if was created via the default constructor thus the server has previously completed a request and is ready for a new one. The second condition checks on if the current request has been completed. This is accomplished via time arithmetic, in which it calls endjob(curr\+\_\+time). 
+\begin{DoxyParams}{Parameters}
+{\em curr\+\_\+time} & a integer variable representing the current clock cycle on the load balancer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+occupied, a boolean variable representing server availabilty. True if currently dealing with a request, False if unoccupied. 
+\end{DoxyReturn}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}

@@ -8,7 +8,7 @@ class loadbalancer{
 
     int clock_len, num_servers;
     RequestQueue workload;
-    vector<webserver> servers;
+    vector<WebServer> servers;
     int rand_len = 2000;
 
     public:
@@ -24,7 +24,7 @@ loadbalancer::loadbalancer(int time_len, int serv_count){
 
     char name = 'a';
     for(int i=0; i<num_servers;i++){
-        servers.push_back(webserver(name));
+        servers.push_back(WebServer(name));
         name++;
     }
 

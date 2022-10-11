@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.17"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Load Balancer: webserver Class Reference</title>
+<title>Load Balancer: WebServer Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,30 +63,184 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="classwebserver-members.html">List of all members</a>  </div>
+<a href="classWebServer-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">webserver Class Reference</div>  </div>
+<div class="title">WebServer Class Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>A class object used to represent a server handling tasks and annoucing when they're complete.  
+ <a href="classWebServer.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="webserver_8h_source.html">webserver.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aa2e5418d6a111ef35bf2e8e47ecfc2ee"><td class="memItemLeft" align="right" valign="top"><a id="aa2e5418d6a111ef35bf2e8e47ecfc2ee"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>webserver</b> (char kname)</td></tr>
-<tr class="separator:aa2e5418d6a111ef35bf2e8e47ecfc2ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af05764f35cc6ed4b391d2fc03cf65122"><td class="memItemLeft" align="right" valign="top"><a id="af05764f35cc6ed4b391d2fc03cf65122"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>status</b> (int curr_time)</td></tr>
-<tr class="separator:af05764f35cc6ed4b391d2fc03cf65122"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adca48f157356fc0605f25d034dc63019"><td class="memItemLeft" align="right" valign="top"><a id="adca48f157356fc0605f25d034dc63019"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>set_job</b> (int beg_time, <a class="el" href="structRequest.html">Request</a> incoming)</td></tr>
-<tr class="separator:adca48f157356fc0605f25d034dc63019"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa1261e5487e72a6a97d6f3ca5600177a"><td class="memItemLeft" align="right" valign="top"><a id="aa1261e5487e72a6a97d6f3ca5600177a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>end_job</b> (int curr_time)</td></tr>
-<tr class="separator:aa1261e5487e72a6a97d6f3ca5600177a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e812ca6ff0422edb7dcf29c571e9f46"><td class="memItemLeft" align="right" valign="top"><a id="a0e812ca6ff0422edb7dcf29c571e9f46"></a>
-char&#160;</td><td class="memItemRight" valign="bottom"><b>get_name</b> ()</td></tr>
-<tr class="separator:a0e812ca6ff0422edb7dcf29c571e9f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bec1dcfde63262493c6b96bc551ac46"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebServer.html#a8bec1dcfde63262493c6b96bc551ac46">WebServer</a> (char kname)</td></tr>
+<tr class="memdesc:a8bec1dcfde63262493c6b96bc551ac46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor.  <a href="classWebServer.html#a8bec1dcfde63262493c6b96bc551ac46">More...</a><br /></td></tr>
+<tr class="separator:a8bec1dcfde63262493c6b96bc551ac46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2217d3f502f9bc003342c7c51e5383f7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebServer.html#a2217d3f502f9bc003342c7c51e5383f7">status</a> (int curr_time)</td></tr>
+<tr class="memdesc:a2217d3f502f9bc003342c7c51e5383f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the server is available to take on a new request.  <a href="classWebServer.html#a2217d3f502f9bc003342c7c51e5383f7">More...</a><br /></td></tr>
+<tr class="separator:a2217d3f502f9bc003342c7c51e5383f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f688babb28b5e6af7170852351ceaf7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebServer.html#a1f688babb28b5e6af7170852351ceaf7">set_job</a> (int beg_time, <a class="el" href="structRequest.html">Request</a> incoming)</td></tr>
+<tr class="memdesc:a1f688babb28b5e6af7170852351ceaf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the server occupied with a new request.  <a href="classWebServer.html#a1f688babb28b5e6af7170852351ceaf7">More...</a><br /></td></tr>
+<tr class="separator:a1f688babb28b5e6af7170852351ceaf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c40df83b705ff4e6fcfe9b5341c6d0a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classWebServer.html#a7c40df83b705ff4e6fcfe9b5341c6d0a">end_job</a> (int curr_time)</td></tr>
+<tr class="memdesc:a7c40df83b705ff4e6fcfe9b5341c6d0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes current request and announces the end of processing.  <a href="classWebServer.html#a7c40df83b705ff4e6fcfe9b5341c6d0a">More...</a><br /></td></tr>
+<tr class="separator:a7c40df83b705ff4e6fcfe9b5341c6d0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>A class object used to represent a server handling tasks and annoucing when they're complete. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8bec1dcfde63262493c6b96bc551ac46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8bec1dcfde63262493c6b96bc551ac46">&#9670;&nbsp;</a></span>WebServer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">WebServer::WebServer </td>
+          <td>(</td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>kname</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default constructor. </p>
+<p>This constructor initliazes all the <a class="el" href="classWebServer.html" title="A class object used to represent a server handling tasks and annoucing when they&#39;re complete.">WebServer</a> data members and fills the current variable with the default constuctor <a class="el" href="structRequest.html" title="A struct holding the incoming and outgoing ip adresses, the time length of a simulated request.">Request()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">kname</td><td>a char representing the unique identifer for the server </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7c40df83b705ff4e6fcfe9b5341c6d0a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c40df83b705ff4e6fcfe9b5341c6d0a">&#9670;&nbsp;</a></span>end_job()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WebServer::end_job </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>curr_time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Removes current request and announces the end of processing. </p>
+<p>This function updates the server data-members with the default values to put it into a unoccupied state and prints out the completion of the request to the system output with its information. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">curr_time</td><td>a integer variable representing the current clock cycle on the load balancer. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a1f688babb28b5e6af7170852351ceaf7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f688babb28b5e6af7170852351ceaf7">&#9670;&nbsp;</a></span>set_job()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void WebServer::set_job </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>beg_time</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structRequest.html">Request</a>&#160;</td>
+          <td class="paramname"><em>incoming</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the server occupied with a new request. </p>
+<p>This function updates the server with a new request by updating the local data members with the new information. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">beg_time</td><td>a integer variable representing the current clock cycle on the load balancer, doesn't change during request run and used for time arithmetic. </td></tr>
+    <tr><td class="paramname">incoming</td><td>a <a class="el" href="structRequest.html" title="A struct holding the incoming and outgoing ip adresses, the time length of a simulated request.">Request</a> variable representing the incoming request that will occupy the server. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2217d3f502f9bc003342c7c51e5383f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2217d3f502f9bc003342c7c51e5383f7">&#9670;&nbsp;</a></span>status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool WebServer::status </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>curr_time</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates if the server is available to take on a new request. </p>
+<p>This function checks two conditions to make the determine if the server is unoccupied, otherwise assume it's still processing a <a class="el" href="structRequest.html" title="A struct holding the incoming and outgoing ip adresses, the time length of a simulated request.">Request</a>. occupied is set True via <a class="el" href="classWebServer.html#a1f688babb28b5e6af7170852351ceaf7" title="Sets the server occupied with a new request.">set_job()</a>. First condition is if the current request has a time length of 0, this would only be possible if was created via the default constructor thus the server has previously completed a request and is ready for a new one. The second condition checks on if the current request has been completed. This is accomplished via time arithmetic, in which it calls endjob(curr_time). </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">curr_time</td><td>a integer variable representing the current clock cycle on the load balancer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>occupied, a boolean variable representing server availabilty. True if currently dealing with a request, False if unoccupied. </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li><a class="el" href="webserver_8h_source.html">webserver.h</a></li>
 </ul>

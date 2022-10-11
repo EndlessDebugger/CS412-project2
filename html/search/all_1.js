@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loadbalancer_1',['loadbalancer',['../classloadbalancer.html',1,'']]]
+  ['gen_5fip_1',['gen_ip',['../structRequest.html#a2d01a3fd3d3228924f5c4dd2ac3e868f',1,'Request']]]
 ];

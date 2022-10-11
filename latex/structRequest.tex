@@ -16,31 +16,113 @@ Collaboration diagram for Request\+:
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structRequest_aea667dc9851539bb6b3d5a5a3b48e831}\label{structRequest_aea667dc9851539bb6b3d5a5a3b48e831}} 
-{\bfseries Request} (int limit)
-\item 
-\mbox{\Hypertarget{structRequest_a32c3715ab77da2fe099712affff193ef}\label{structRequest_a32c3715ab77da2fe099712affff193ef}} 
-{\bfseries Request} (string in, string out, int t)
-\item 
-\mbox{\Hypertarget{structRequest_a2d01a3fd3d3228924f5c4dd2ac3e868f}\label{structRequest_a2d01a3fd3d3228924f5c4dd2ac3e868f}} 
-string {\bfseries gen\+\_\+ip} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{structRequest_afaf8d8928de7ffff8a3767589489bd33}{Request}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor, used for debugging and program initlization. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structRequest_aea667dc9851539bb6b3d5a5a3b48e831}{Request}} (int limit)
+\begin{DoxyCompactList}\small\item\em Creation Constructor, used for request generation. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structRequest_a32c3715ab77da2fe099712affff193ef}{Request}} (string in, string out, int t)
+\begin{DoxyCompactList}\small\item\em Debugging Constructor, This constructor will have all its given arguements to create that exact request. \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{structRequest_a2d01a3fd3d3228924f5c4dd2ac3e868f}{gen\+\_\+ip}} ()
+\begin{DoxyCompactList}\small\item\em I\+P\+V4 Address generation. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structRequest_a2b93ebbd0fbd5ebf8b15f5583b087a12}\label{structRequest_a2b93ebbd0fbd5ebf8b15f5583b087a12}} 
-string {\bfseries ip\+\_\+in}
+string \mbox{\hyperlink{structRequest_a2b93ebbd0fbd5ebf8b15f5583b087a12}{ip\+\_\+in}}
 \item 
-\mbox{\Hypertarget{structRequest_ae3394ea2aa8654ec22bc87083a8d3bda}\label{structRequest_ae3394ea2aa8654ec22bc87083a8d3bda}} 
-string {\bfseries ip\+\_\+out}
+string \mbox{\hyperlink{structRequest_ae3394ea2aa8654ec22bc87083a8d3bda}{ip\+\_\+out}}
 \item 
-\mbox{\Hypertarget{structRequest_a3cfb576ed0b5e08612f3de8bc7cd72e2}\label{structRequest_a3cfb576ed0b5e08612f3de8bc7cd72e2}} 
-int {\bfseries time}
+int \mbox{\hyperlink{structRequest_a3cfb576ed0b5e08612f3de8bc7cd72e2}{time}}
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 A struct holding the incoming and outgoing ip adresses, the time length of a simulated request. 
+
+This object is used for a webserver object to hold onto while running to simulate a server handling requests. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structRequest_afaf8d8928de7ffff8a3767589489bd33}\label{structRequest_afaf8d8928de7ffff8a3767589489bd33}} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Default constructor, used for debugging and program initlization. 
+
+This constructor will used \char`\"{}default\char`\"{} and 0 for time\+\_\+len in the request creation. It is meant for the webserver to differinate when a request has been completed versus in progress. \mbox{\Hypertarget{structRequest_aea667dc9851539bb6b3d5a5a3b48e831}\label{structRequest_aea667dc9851539bb6b3d5a5a3b48e831}} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}\item[{int}]{limit }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Creation Constructor, used for request generation. 
+
+This is the main constructor used for the program. It will take in the time needed to complete the request and generate 2 randomized IP addresses via $<$gen\+\_\+ip$>$\char`\"{}()\char`\"{}". The majority of requests will be made from this constructor. 
+\begin{DoxyParams}{Parameters}
+{\em limit} & an integer argument representing the time the request takes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structRequest_a32c3715ab77da2fe099712affff193ef}\label{structRequest_a32c3715ab77da2fe099712affff193ef}} 
+\index{Request@{Request}!Request@{Request}}
+\index{Request@{Request}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{Request()}{Request()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily Request\+::\+Request (\begin{DoxyParamCaption}\item[{string}]{in,  }\item[{string}]{out,  }\item[{int}]{t }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Debugging Constructor, This constructor will have all its given arguements to create that exact request. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em in} & a String argument the incoming I\+P\+V4 address. \\
+\hline
+{\em out} & a String argument the outgoing I\+P\+V4 address. \\
+\hline
+{\em t} & an integer argument representing the time the request takes \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{structRequest_a2d01a3fd3d3228924f5c4dd2ac3e868f}\label{structRequest_a2d01a3fd3d3228924f5c4dd2ac3e868f}} 
+\index{Request@{Request}!gen\_ip@{gen\_ip}}
+\index{gen\_ip@{gen\_ip}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{gen\_ip()}{gen\_ip()}}
+{\footnotesize\ttfamily string Request\+::gen\+\_\+ip (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+I\+P\+V4 Address generation. 
+
+When called it will call rand()\%256 (0 to 255) to generate one part of an I\+P\+V4 address. Thus it\textquotesingle{}s structure is\+: \textquotesingle{}rand()\%256\textquotesingle{}.\textquotesingle{}rand()\%256\textquotesingle{}.\textquotesingle{}rand()\%256\textquotesingle{}.\textquotesingle{}rand()\%256\textquotesingle{} Each part is converted and merged into one string. \begin{DoxyReturn}{Returns}
+a String parameter holding a randomized I\+P\+V4 Address. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structRequest_a2b93ebbd0fbd5ebf8b15f5583b087a12}\label{structRequest_a2b93ebbd0fbd5ebf8b15f5583b087a12}} 
+\index{Request@{Request}!ip\_in@{ip\_in}}
+\index{ip\_in@{ip\_in}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{ip\_in}{ip\_in}}
+{\footnotesize\ttfamily string Request\+::ip\+\_\+in}
+
+String I\+P\+V4 address meant to represent the address the request came from. \mbox{\Hypertarget{structRequest_ae3394ea2aa8654ec22bc87083a8d3bda}\label{structRequest_ae3394ea2aa8654ec22bc87083a8d3bda}} 
+\index{Request@{Request}!ip\_out@{ip\_out}}
+\index{ip\_out@{ip\_out}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{ip\_out}{ip\_out}}
+{\footnotesize\ttfamily string Request\+::ip\+\_\+out}
+
+String I\+P\+V4 address, meant to represent the address the request goes to. \mbox{\Hypertarget{structRequest_a3cfb576ed0b5e08612f3de8bc7cd72e2}\label{structRequest_a3cfb576ed0b5e08612f3de8bc7cd72e2}} 
+\index{Request@{Request}!time@{time}}
+\index{time@{time}!Request@{Request}}
+\doxysubsubsection{\texorpdfstring{time}{time}}
+{\footnotesize\ttfamily int Request\+::time}
+
+unsigned int32, meant to represent the time it will take to complete the request by the server. 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

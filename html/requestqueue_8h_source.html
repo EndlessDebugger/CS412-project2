@@ -70,56 +70,68 @@ $(function() {
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &lt;exception&gt;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">using</span> std::string, std::queue, std::rand, std::to_string;</div>
-<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structRequest.html">   19</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structRequest.html">Request</a>{</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordtype">string</span> ip_in;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keywordtype">string</span> ip_out;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    <span class="keywordtype">int</span> time;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="structRequest.html">Request</a>(): ip_in(<span class="stringliteral">&quot;default&quot;</span>), ip_out(<span class="stringliteral">&quot;default&quot;</span>),time(0){};</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="structRequest.html">Request</a>(<span class="keywordtype">int</span> limit): ip_in(gen_ip()), ip_out(gen_ip()),time(limit){};</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="structRequest.html">Request</a>(<span class="keywordtype">string</span> in, <span class="keywordtype">string</span> out, <span class="keywordtype">int</span> t): ip_in(in), ip_out(out),time(t){};</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordtype">string</span> gen_ip(){</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        <span class="keywordflow">return</span> to_string(rand()%256)+<span class="stringliteral">&quot;.&quot;</span>+to_string(rand()%256)+<span class="stringliteral">&quot;.&quot;</span>+to_string(rand()%256)+<span class="stringliteral">&quot;.&quot;</span>+to_string(rand()%256);</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    };</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="structRequest.html">   21</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structRequest.html">Request</a>{</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="structRequest.html#a2b93ebbd0fbd5ebf8b15f5583b087a12">   22</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="structRequest.html#a2b93ebbd0fbd5ebf8b15f5583b087a12">ip_in</a>;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="structRequest.html#ae3394ea2aa8654ec22bc87083a8d3bda">   23</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="structRequest.html#ae3394ea2aa8654ec22bc87083a8d3bda">ip_out</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="structRequest.html#a3cfb576ed0b5e08612f3de8bc7cd72e2">   24</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structRequest.html#a3cfb576ed0b5e08612f3de8bc7cd72e2">time</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="structRequest.html#afaf8d8928de7ffff8a3767589489bd33">   30</a></span>&#160;    <a class="code" href="structRequest.html#afaf8d8928de7ffff8a3767589489bd33">Request</a>(): <a class="code" href="structRequest.html#a2b93ebbd0fbd5ebf8b15f5583b087a12">ip_in</a>(<span class="stringliteral">&quot;default&quot;</span>), <a class="code" href="structRequest.html#ae3394ea2aa8654ec22bc87083a8d3bda">ip_out</a>(<span class="stringliteral">&quot;default&quot;</span>),<a class="code" href="structRequest.html#a3cfb576ed0b5e08612f3de8bc7cd72e2">time</a>(0){};</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;};</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classRequestQueue.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRequestQueue.html">RequestQueue</a>{</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    queue&lt;Request&gt; holder;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">bool</span> add(<a class="code" href="structRequest.html">Request</a> x){</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">try</span>{</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            holder.push(x);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordflow">catch</span>(std::exception e){</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        }</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="structRequest.html">Request</a> pop(){</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span>(!empty()){</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <a class="code" href="structRequest.html">Request</a> temp = holder.front();</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;            holder.pop();</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;            <span class="keywordflow">return</span> temp;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        }</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">throw</span> <span class="stringliteral">&quot;Queue is empty&quot;</span>;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    }</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="structRequest.html#aea667dc9851539bb6b3d5a5a3b48e831">   38</a></span>&#160;    <a class="code" href="structRequest.html#aea667dc9851539bb6b3d5a5a3b48e831">Request</a>(<span class="keywordtype">int</span> limit): <a class="code" href="structRequest.html#a2b93ebbd0fbd5ebf8b15f5583b087a12">ip_in</a>(<a class="code" href="structRequest.html#a2d01a3fd3d3228924f5c4dd2ac3e868f">gen_ip</a>()), <a class="code" href="structRequest.html#ae3394ea2aa8654ec22bc87083a8d3bda">ip_out</a>(<a class="code" href="structRequest.html#a2d01a3fd3d3228924f5c4dd2ac3e868f">gen_ip</a>()),<a class="code" href="structRequest.html#a3cfb576ed0b5e08612f3de8bc7cd72e2">time</a>(limit){};</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="structRequest.html#a32c3715ab77da2fe099712affff193ef">   46</a></span>&#160;    <a class="code" href="structRequest.html#a32c3715ab77da2fe099712affff193ef">Request</a>(<span class="keywordtype">string</span> in, <span class="keywordtype">string</span> out, <span class="keywordtype">int</span> t): <a class="code" href="structRequest.html#a2b93ebbd0fbd5ebf8b15f5583b087a12">ip_in</a>(in), <a class="code" href="structRequest.html#ae3394ea2aa8654ec22bc87083a8d3bda">ip_out</a>(out),<a class="code" href="structRequest.html#a3cfb576ed0b5e08612f3de8bc7cd72e2">time</a>(t){};</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="structRequest.html#a2d01a3fd3d3228924f5c4dd2ac3e868f">   56</a></span>&#160;    <span class="keywordtype">string</span> <a class="code" href="structRequest.html#a2d01a3fd3d3228924f5c4dd2ac3e868f">gen_ip</a>(){</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keywordflow">return</span> to_string(rand()%256)+<span class="stringliteral">&quot;.&quot;</span>+to_string(rand()%256)+<span class="stringliteral">&quot;.&quot;</span>+to_string(rand()%256)+<span class="stringliteral">&quot;.&quot;</span>+to_string(rand()%256);</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    };</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;};</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">bool</span> empty(){</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> holder.empty();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classRequestQueue.html">   63</a></span>&#160;<span class="keyword">class </span><a class="code" href="classRequestQueue.html">RequestQueue</a>{</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    queue&lt;Request&gt; holder;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">bool</span> add(<a class="code" href="structRequest.html">Request</a> x){</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">try</span>{</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;            holder.push(x);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        }</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <span class="keywordflow">catch</span>(std::exception e){</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        }</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <a class="code" href="structRequest.html">Request</a> pop(){</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">if</span>(!empty()){</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;            <a class="code" href="structRequest.html">Request</a> temp = holder.front();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;            holder.pop();</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="keywordflow">return</span> temp;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordflow">throw</span> <span class="stringliteral">&quot;Queue is empty&quot;</span>;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">bool</span> empty(){</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <span class="keywordflow">return</span> holder.empty();</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassRequestQueue_html"><div class="ttname"><a href="classRequestQueue.html">RequestQueue</a></div><div class="ttdef"><b>Definition:</b> requestqueue.h:35</div></div>
-<div class="ttc" id="astructRequest_html"><div class="ttname"><a href="structRequest.html">Request</a></div><div class="ttdoc">A struct holding the incoming and outgoing ip adresses, the time length of a simulated request.</div><div class="ttdef"><b>Definition:</b> requestqueue.h:19</div></div>
+<div class="ttc" id="aclassRequestQueue_html"><div class="ttname"><a href="classRequestQueue.html">RequestQueue</a></div><div class="ttdef"><b>Definition:</b> requestqueue.h:63</div></div>
+<div class="ttc" id="astructRequest_html_ae3394ea2aa8654ec22bc87083a8d3bda"><div class="ttname"><a href="structRequest.html#ae3394ea2aa8654ec22bc87083a8d3bda">Request::ip_out</a></div><div class="ttdeci">string ip_out</div><div class="ttdef"><b>Definition:</b> requestqueue.h:23</div></div>
+<div class="ttc" id="astructRequest_html_a32c3715ab77da2fe099712affff193ef"><div class="ttname"><a href="structRequest.html#a32c3715ab77da2fe099712affff193ef">Request::Request</a></div><div class="ttdeci">Request(string in, string out, int t)</div><div class="ttdoc">Debugging Constructor, This constructor will have all its given arguements to create that exact reque...</div><div class="ttdef"><b>Definition:</b> requestqueue.h:46</div></div>
+<div class="ttc" id="astructRequest_html_aea667dc9851539bb6b3d5a5a3b48e831"><div class="ttname"><a href="structRequest.html#aea667dc9851539bb6b3d5a5a3b48e831">Request::Request</a></div><div class="ttdeci">Request(int limit)</div><div class="ttdoc">Creation Constructor, used for request generation.</div><div class="ttdef"><b>Definition:</b> requestqueue.h:38</div></div>
+<div class="ttc" id="astructRequest_html"><div class="ttname"><a href="structRequest.html">Request</a></div><div class="ttdoc">A struct holding the incoming and outgoing ip adresses, the time length of a simulated request.</div><div class="ttdef"><b>Definition:</b> requestqueue.h:21</div></div>
+<div class="ttc" id="astructRequest_html_a2b93ebbd0fbd5ebf8b15f5583b087a12"><div class="ttname"><a href="structRequest.html#a2b93ebbd0fbd5ebf8b15f5583b087a12">Request::ip_in</a></div><div class="ttdeci">string ip_in</div><div class="ttdef"><b>Definition:</b> requestqueue.h:22</div></div>
+<div class="ttc" id="astructRequest_html_a2d01a3fd3d3228924f5c4dd2ac3e868f"><div class="ttname"><a href="structRequest.html#a2d01a3fd3d3228924f5c4dd2ac3e868f">Request::gen_ip</a></div><div class="ttdeci">string gen_ip()</div><div class="ttdoc">IPV4 Address generation.</div><div class="ttdef"><b>Definition:</b> requestqueue.h:56</div></div>
+<div class="ttc" id="astructRequest_html_afaf8d8928de7ffff8a3767589489bd33"><div class="ttname"><a href="structRequest.html#afaf8d8928de7ffff8a3767589489bd33">Request::Request</a></div><div class="ttdeci">Request()</div><div class="ttdoc">Default constructor, used for debugging and program initlization.</div><div class="ttdef"><b>Definition:</b> requestqueue.h:30</div></div>
+<div class="ttc" id="astructRequest_html_a3cfb576ed0b5e08612f3de8bc7cd72e2"><div class="ttname"><a href="structRequest.html#a3cfb576ed0b5e08612f3de8bc7cd72e2">Request::time</a></div><div class="ttdeci">int time</div><div class="ttdef"><b>Definition:</b> requestqueue.h:24</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

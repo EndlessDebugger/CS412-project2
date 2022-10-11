@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['time_14',['time',['../structRequest.html#a3cfb576ed0b5e08612f3de8bc7cd72e2',1,'Request']]]
+  ['set_5fjob_14',['set_job',['../classWebServer.html#a1f688babb28b5e6af7170852351ceaf7',1,'WebServer']]],
+  ['status_15',['status',['../classWebServer.html#a2217d3f502f9bc003342c7c51e5383f7',1,'WebServer']]]
 ];

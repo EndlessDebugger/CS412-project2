@@ -1,0 +1,21 @@
+\hypertarget{loadbalancer_8cpp}{}\doxysection{loadbalancer.\+cpp File Reference}
+\label{loadbalancer_8cpp}\index{loadbalancer.cpp@{loadbalancer.cpp}}
+
+
+This file contains the class for the loadbalancer object. Meant to simulate a loadbalancer handling and dispatching requests to a number a servers from a number of users.  
+
+
+{\ttfamily \#include \char`\"{}webserver.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for loadbalancer.\+cpp\+:
+% FIG 0
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classloadbalancer}{loadbalancer}}
+\begin{DoxyCompactList}\small\item\em A class object used to represent a loadbalancer handling requests and servers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file contains the class for the loadbalancer object. Meant to simulate a loadbalancer handling and dispatching requests to a number a servers from a number of users. 
+

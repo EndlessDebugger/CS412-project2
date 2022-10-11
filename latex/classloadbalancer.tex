@@ -1,16 +1,57 @@
 \hypertarget{classloadbalancer}{}\doxysection{loadbalancer Class Reference}
 \label{classloadbalancer}\index{loadbalancer@{loadbalancer}}
+
+
+A class object used to represent a loadbalancer handling requests and servers.  
+
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classloadbalancer_adec7f9d3c7551afe5a004974f821a67b}\label{classloadbalancer_adec7f9d3c7551afe5a004974f821a67b}} 
-{\bfseries loadbalancer} (int clock\+\_\+len, int num\+\_\+servers)
-\item 
-\mbox{\Hypertarget{classloadbalancer_aa043c187c9757dca06f1bbadfa1a7a48}\label{classloadbalancer_aa043c187c9757dca06f1bbadfa1a7a48}} 
-void {\bfseries main\+\_\+loop} ()
-\end{DoxyCompactItemize}
+\mbox{\hyperlink{classloadbalancer_adec7f9d3c7551afe5a004974f821a67b}{loadbalancer}} (int clock\+\_\+len, int num\+\_\+servers)
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classloadbalancer_aa043c187c9757dca06f1bbadfa1a7a48}{main\+\_\+loop}} ()
+\begin{DoxyCompactList}\small\item\em This runs the simulation and assigns each server with its request onces it\textquotesingle{}s avaialble. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+A class object used to represent a loadbalancer handling requests and servers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classloadbalancer_adec7f9d3c7551afe5a004974f821a67b}\label{classloadbalancer_adec7f9d3c7551afe5a004974f821a67b}} 
+\index{loadbalancer@{loadbalancer}!loadbalancer@{loadbalancer}}
+\index{loadbalancer@{loadbalancer}!loadbalancer@{loadbalancer}}
+\doxysubsubsection{\texorpdfstring{loadbalancer()}{loadbalancer()}}
+{\footnotesize\ttfamily loadbalancer\+::loadbalancer (\begin{DoxyParamCaption}\item[{int}]{time\+\_\+len,  }\item[{int}]{serv\+\_\+count }\end{DoxyParamCaption})}
+
+
+
+Default constructor. 
+
+This constructor initliazes all the loadbalancer data members, creates all the servers and fills the request queue with requests equal to 2 times the number of servers.
+
+
+\begin{DoxyParams}{Parameters}
+{\em time\+\_\+len} & an integer representing the user input for how long the loadbalancer should run. \\
+\hline
+{\em serv\+\_\+count} & an integer representing the user input for how many servers the loadbalancer has \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classloadbalancer_aa043c187c9757dca06f1bbadfa1a7a48}\label{classloadbalancer_aa043c187c9757dca06f1bbadfa1a7a48}} 
+\index{loadbalancer@{loadbalancer}!main\_loop@{main\_loop}}
+\index{main\_loop@{main\_loop}!loadbalancer@{loadbalancer}}
+\doxysubsubsection{\texorpdfstring{main\_loop()}{main\_loop()}}
+{\footnotesize\ttfamily void loadbalancer\+::main\+\_\+loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+This runs the simulation and assigns each server with its request onces it\textquotesingle{}s avaialble. 
+
+After beginning the clock, the function runs an endless loop until either the clock length has been reached or the requestqeue has become empty. The first condition is to ensure the loop is ends within a reasonable amount of time of the inputted time. The second condition is to ensure every request is handled before ending the loadbalancer. After the loop has begun, we randomly generate a number of requests to add to the queue, representing actual traffic. After which, the function iterates through all the servers and checks if they\textquotesingle{}re available for a new request, if not then continue, otherwise assign the server the request and move to the next server. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-loadbalancer.\+cpp\end{DoxyCompactItemize}
+\mbox{\hyperlink{loadbalancer_8cpp}{loadbalancer.\+cpp}}\end{DoxyCompactItemize}

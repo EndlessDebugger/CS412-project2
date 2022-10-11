@@ -21,5 +21,5 @@ int main(){
         test.main_loop();
     }
 
-    cout << "--------Have a nice day--------"<< endl;
+    cout << "--------Have a nice day--------" << endl;
 }

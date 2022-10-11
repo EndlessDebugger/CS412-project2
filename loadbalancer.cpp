@@ -9,6 +9,7 @@ class loadbalancer{
     int clock_len, num_servers;
     RequestQueue workload;
     vector<webserver> servers;
+    int rand_len = 2000;
 
     public:
     loadbalancer(int clock_len, int num_servers);
@@ -19,6 +20,7 @@ class loadbalancer{
 loadbalancer::loadbalancer(int time_len, int serv_count){
     clock_len = time_len;
     num_servers = serv_count;
+    rand_len = time_len / 50;
 
     char name = 'a';
     for(int i=0; i<num_servers;i++){
@@ -28,7 +30,7 @@ loadbalancer::loadbalancer(int time_len, int serv_count){
 
     for(int i = 0; i < num_servers*2; i++){
         // len is the random amount of time each request would take
-        int len = rand() % 50 +5;
+        int len = rand() % rand_len +5;
         workload.add(Request(len));
     }
 
@@ -42,8 +44,11 @@ void loadbalancer::main_loop(){
 
 
         if(rand()%213+1 == 4){
-            int len = rand() % 50 + 5;
-            workload.add(Request(len));
+            int num = rand()%5+1;
+            for(int i =0; i< num;i++){
+                int len = rand() % rand_len + 5;
+                workload.add(Request(len));
+            }
         }
 
         for(int i = 0; i <num_servers;i++){

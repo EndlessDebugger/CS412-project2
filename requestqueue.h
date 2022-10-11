@@ -3,7 +3,21 @@
 #include <exception>
 
 using std::string, std::queue, std::rand, std::to_string;
+/**
+ * \file requestqueue.h
+ * @brief 
+ * This file contains the class for the request queue. 
+ *  And the struct for Request objects and its attributes
+ * 
+ */
 
+
+
+/*! \struct Request
+    \brief A struct holding the incoming and outgoing ip adresses, the time length of a simulated request.
+
+    This object is used for a webserver object to hold onto while 
+*/
 struct Request{
     string ip_in;
     string ip_out;

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['cs412_2dproject2_1',['CS412-project2',['../md_README.html',1,'']]]
+  ['csce_20412_3a_20project_202_3a_20loadbalancer_1',['CSCE 412: Project 2: LoadBalancer',['../index.html',1,'']]],
+  ['cs412_2dproject2_2',['CS412-project2',['../md_README.html',1,'']]]
 ];

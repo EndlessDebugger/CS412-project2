@@ -104,4 +104,7 @@ class RequestQueue{
     bool empty(){
         return holder.empty();
     }
+    int size(){
+        return holder.size();
+    }
 };

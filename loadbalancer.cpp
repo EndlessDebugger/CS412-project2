@@ -51,6 +51,8 @@ loadbalancer::loadbalancer(int time_len, int serv_count){
         workload.add(Request(len));
     }
 
+    cout<<"Requests have a range of 5 to "<<rand_len<<" clock cycles"<<endl;
+
 }
 
 //! This runs the simulation and assigns each server with its request onces it's avaialble
@@ -62,7 +64,8 @@ loadbalancer::loadbalancer(int time_len, int serv_count){
 void loadbalancer::main_loop(){
 
     int clock = 0;
-
+    int rand_requests = 0;
+    int total = workload.size();
     while(clock <= clock_len || !workload.empty()){
 
 
@@ -72,6 +75,7 @@ void loadbalancer::main_loop(){
                 int len = rand() % rand_len + 5;
                 workload.add(Request(len));
             }
+            rand_requests += num;
         }
 
         for(int i = 0; i <num_servers;i++){
@@ -88,5 +92,8 @@ void loadbalancer::main_loop(){
         clock++;
 
     }
+
+    cout<<"Initial Queue size: "<<total<<endl;
+    cout<<"Final number of requests handled: "<<rand_requests<<endl;
 
 }

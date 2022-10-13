@@ -47,7 +47,7 @@ loadbalancer::loadbalancer(int time_len, int serv_count){
 
     for(int i = 0; i < num_servers*2; i++){
         // len is the random amount of time each request would take
-        int len = rand() % rand_len +5;
+        int len = rand() % 1000 +5;
         workload.add(Request(len));
     }
 
@@ -69,13 +69,13 @@ void loadbalancer::main_loop(){
     while(clock <= clock_len || !workload.empty()){
 
 
-        if(rand()%213+1 == 4){
-            int num = rand()%5+1;
-            for(int i =0; i< num;i++){
+        if(rand()%1000+1 == 23){
+            // int num = rand()%5+1;
+            // for(int i =0; i< num;i++){
                 int len = rand() % rand_len + 5;
                 workload.add(Request(len));
-            }
-            rand_requests += num;
+            // }
+            rand_requests += 1;
         }
 
         for(int i = 0; i <num_servers;i++){

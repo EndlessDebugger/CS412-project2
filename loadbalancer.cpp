@@ -69,7 +69,7 @@ void loadbalancer::main_loop(){
     while(clock <= clock_len || !workload.empty()){
 
 
-        if(rand()%1000+1 == 23){
+        if(rand()%1000+1 == 23 && !(clock > clock_len)){
             // int num = rand()%5+1;
             // for(int i =0; i< num;i++){
                 int len = rand() % rand_len + 5;
@@ -94,6 +94,6 @@ void loadbalancer::main_loop(){
     }
 
     cout<<"Initial Queue size: "<<total<<endl;
-    cout<<"Final number of requests handled: "<<rand_requests<<endl;
+    cout<<"Final number of requests handled: "<<(total+rand_requests)<<endl;
 
 }
